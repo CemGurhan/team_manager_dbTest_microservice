@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "github.com/cemgurhan/team_manager_dbTest_microservice";
+
+message Test {
+    string id = 1;
+    string name = 2;
+    
+}
+
+message CreateTestRequest {
+
+    string name = 1;
+
+}
+
+message CreateTestResponse {
+
+    bool Succes = 1;
+    string message = 2;
+
+}
+
+service TestService {
+    rpc CreateTest(CreateTestRequest) returns (CreateTestResponse);
+}
